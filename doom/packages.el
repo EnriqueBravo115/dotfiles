@@ -1,0 +1,7 @@
+(package! olivetti)
+(package! org-modern)
+(unpin! org-roam)
+(package! org-roam-ui)
+(package! dashboard)
+(package! spacemacs-theme)
+(package! sweet-theme)
