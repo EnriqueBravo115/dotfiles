@@ -1,12 +1,12 @@
-(setq doom-font (font-spec :family "Iosevka Nerd Font" :size 16 :weight 'semi-light :height 1.5))
+(setq doom-font (font-spec :family "Iosevka Nerd Font" :size 16 :height 1.5))
 
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-zenburn)
 
 (setq display-line-numbers-type 'nil)
 
 (setq global-hl-line-modes nil)
 
-;;(add-to-list 'default-frame-alist '(alpha . 95))
+;;(add-to-list 'default-frame-alist '(alpha . 90))
 
 (require 'dashboard)
 (dashboard-setup-startup-hook)
@@ -21,7 +21,7 @@
     ("/" (italic :foreground "#FAB795" ))
     ("_" (:underline t  ))
     ("=" (bold :background "#78c2b3" :foreground "black"))
-    ("~" (bold :foreground "#E76D83" ))
+    ("~" (bold :foreground "#ae81ff" ))
     ("+" ( ))))
 
 (setq org-hide-emphasis-markers t)
@@ -35,8 +35,8 @@
 (setq org-modern-star "⊚⊙⊖⊜⊛")
 
 (custom-set-faces
- '(org-level-1 ((t (:foreground "#ae81ff" ))))
- '(org-level-2 ((t (:foreground "#26BBD9" ))))
+ '(org-level-1 ((t (:foreground "#ae81ff" :weight normal))))
+ '(org-level-2 ((t (:weight normal))))
  '(text-math ((t (:foreground "#fc514e"))))
  '(org-ellipsis ((t (:foreground "#fd9353"))))
  '(org-list-dt ((t (:foreground "#fd9353"))))
@@ -59,7 +59,7 @@
 
 (with-eval-after-load 'org (global-org-modern-mode))
 
-(setq org-roam-directory "~/Documents/personal/roam")
+(setq org-roam-directory "~/Documents/roam")
 
 (use-package! org-roam-ui
   :config
@@ -74,8 +74,23 @@
   ("\\.pdf\\'" . "zathura %s")
   (directory . emacs)))
 
-(setq org-journal-dir "~/Documents/personal/roam/journal")
+(setq org-journal-dir "~/Documents/roam/journal")
 (setq org-journal-date-prefix "#+title: ")
 (setq org-journal-time-prefix "* ")
 (setq org-journal-date-format "%a, %d-%m-%Y")
 (setq org-journal-file-format "%d-%m-%Y.org")
+
+(global-set-key (kbd "C-c c") 'set-chinese-py-input-method)
+
+(defun set-chinese-py-input-method ()
+  "Set input method to chinese-py."
+  (interactive)
+  (set-input-method 'chinese-py))
+
+(global-set-key (kbd "C-c s") 'set-spanish-input-method)
+
+(defun set-spanish-input-method ()
+  "Set input method to spanish"
+  (interactive)
+  (set-input-method 'spanish-prefix))
+
