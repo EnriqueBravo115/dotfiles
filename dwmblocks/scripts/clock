@@ -1,0 +1,4 @@
+#! /bin/bash 
+
+dte="$(date +"%l:%M%p")"
+echo -e "$dte"
