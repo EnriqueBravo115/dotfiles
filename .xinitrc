@@ -1,8 +1,7 @@
 #!/bin/bash
 
-feh --bg-fill /home/nullboy/Documents/org/wallpapers/iceland.jpg &
+feh --bg-fill /home/nullboy/Documents/org/wallpapers/yosemite.jpg &
 
 blueman-applet &
-picom &
 /usr/local/bin/dwmblocks &
 dwm
