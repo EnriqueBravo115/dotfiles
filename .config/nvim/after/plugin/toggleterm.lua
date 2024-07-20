@@ -1,7 +1,7 @@
 require("toggleterm").setup {
-  size = 80,
+  size = 15,
   open_mapping = [[<c-f>]],
-  direction = "vertical",
+  direction = "horizontal",
   float_opts = {
   }
 }

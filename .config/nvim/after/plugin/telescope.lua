@@ -13,11 +13,11 @@ vim.keymap.set('n', '<leader>fo',
   opts
 )
 
-vim.keymap.set("n", "<leader>fs", function()
+vim.keymap.set("n", "<leader>ww", function()
   builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 
-vim.keymap.set("n", "<leader>w", function()
-  local word = vim.fn.expand("<cword>")
-  builtin.grep_string({ search = word })
-end)
+--vim.keymap.set("n", "<leader>w", function()
+--  local word = vim.fn.expand("<cword>")
+--  builtin.grep_string({ search = word })
+--end)

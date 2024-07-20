@@ -503,6 +503,7 @@
   ("\\.pdf::\\([0-9]+\\)?\\'" . "zathura %s -P %1")
   ("\\.pdf\\'" . "zathura %s")
   ("\\.mp3\\'" . "mpv \"%s\"")
+  ("\\.opus\\'" . "mpv \"%s\"")
   ("\\.mp4\\'" . "mpv \"%s\"")
   (directory . emacs)))
 
