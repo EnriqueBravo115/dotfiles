@@ -588,7 +588,7 @@
 (setq use-dialog-box nil)    ;; No dialog box
 (setq pop-up-windows nil)    ;; No popup windows
 (blink-cursor-mode 0)
-;;(add-to-list 'default-frame-alist '(alpha-background . 95)) ; For all new frames henceforth
+(add-to-list 'default-frame-alist '(alpha-background . 90)) ; For all new frames henceforth
 #+end_src
 
 * Which-Key
