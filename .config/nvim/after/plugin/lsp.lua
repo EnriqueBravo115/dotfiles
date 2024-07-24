@@ -29,11 +29,14 @@ cmp.setup({
       ellipsis_char = "...",
       symbol_map = {
         Value = "",
-        Interface = "",
-        Method = "󰊕",
-        Class = "",
+        Interface = "接口",
+        Variable = "变量",
+        Method = "函数",
+        Function = "函数",
+        Class = "类",
         Text = "",
-        Snippet = "󰕣"
+        Snippet = "片段",
+        Keyword = "关键字"
       }
     })
   },

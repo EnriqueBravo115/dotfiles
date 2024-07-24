@@ -1,14 +1,14 @@
 local Colors = {
-  violet = "#b876db",
+  violet = "#C69FF5",
   black  = "#000000",
-  green  = "#27d696",
+  green  = "#8BD5CA",
   gray1  = "#262626",
   gray5  = "#323437",
   gray7  = "#9e9e9e",
   gray10 = "#f0f0f0",
   t      = "#00FFFFFF",
   orange = "#e85678",
-  yellow = "#fac39b",
+  yellow = "#EE999F",
 }
 
 local powerline = {
@@ -29,7 +29,7 @@ local powerline = {
 
 require("lualine").setup {
   options = {
-    theme = "auto",
+    theme = powerline,
     component_separators = "",
     section_separators = { left = "", right = "" },
     always_divide_middle = false,
