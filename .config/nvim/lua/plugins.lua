@@ -10,16 +10,12 @@ return require("packer").startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   use { "stevearc/dressing.nvim" }
   use "HiPhish/rainbow-delimiters.nvim"
-  use "joerdav/templ.vim"
-  use { "akinsho/horizon.nvim", tag = "*" }
-  use "bluz71/vim-moonfly-colors"
-  use { "ellisonleao/gruvbox.nvim" }
   use "jiangmiao/auto-pairs"
+  use 'navarasu/onedark.nvim'
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
-  use 'navarasu/onedark.nvim'
 
   use {
     "nvim-lualine/lualine.nvim",
@@ -28,7 +24,6 @@ return require("packer").startup(function(use)
 
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   --use "nvim-treesitter/nvim-treesitter-context"
-  use "windwp/nvim-ts-autotag"
 
   use({
     "utilyre/barbecue.nvim",
@@ -58,7 +53,7 @@ return require("packer").startup(function(use)
 
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
   use "folke/neodev.nvim"
-  use "jose-elias-alvarez/null-ls.nvim"
+  --use "jose-elias-alvarez/null-ls.nvim"
 
   -- LANG
   use "mfussenegger/nvim-jdtls"

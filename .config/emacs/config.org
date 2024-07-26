@@ -588,7 +588,12 @@
 (setq use-dialog-box nil)    ;; No dialog box
 (setq pop-up-windows nil)    ;; No popup windows
 (blink-cursor-mode 0)
-(add-to-list 'default-frame-alist '(alpha-background . 90)) ; For all new frames henceforth
+;;(add-to-list 'default-frame-alist '(alpha-background . 90)) ; For all new frames henceforth
+
+(tool-bar-mode -1)
+(setq frame-resize-pixelwise t)
+(dotimes (n 3)
+  (toggle-frame-maximized))
 #+end_src
 
 * Which-Key
