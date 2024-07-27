@@ -2,12 +2,10 @@ return require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
 
   -- GENERAL
-  use "akinsho/toggleterm.nvim"
   use "nvim-tree/nvim-tree.lua"
   use "nvim-tree/nvim-web-devicons"
   use "lewis6991/gitsigns.nvim"
   use "norcalli/nvim-colorizer.lua"
-  use "lukas-reineke/indent-blankline.nvim"
   use { "stevearc/dressing.nvim" }
   use "HiPhish/rainbow-delimiters.nvim"
   use "jiangmiao/auto-pairs"
@@ -23,7 +21,6 @@ return require("packer").startup(function(use)
   }
 
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-  --use "nvim-treesitter/nvim-treesitter-context"
 
   use({
     "utilyre/barbecue.nvim",
@@ -53,14 +50,13 @@ return require("packer").startup(function(use)
 
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
   use "folke/neodev.nvim"
-  --use "jose-elias-alvarez/null-ls.nvim"
 
   -- LANG
   use "mfussenegger/nvim-jdtls"
   use "leoluz/nvim-dap-go"
-  use "clojure-vim/vim-jack-in"
-  use "tpope/vim-dispatch"
-  use "Olical/conjure"
+  --use "clojure-vim/vim-jack-in"
+  --use "tpope/vim-dispatch"
+  --use "Olical/conjure"
 
   use {
     "VonHeikemen/lsp-zero.nvim",

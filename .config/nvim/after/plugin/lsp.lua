@@ -72,7 +72,12 @@ cmp.setup({
   },
 })
 
-require 'lspconfig'.templ.setup {}
+require 'lspconfig'.clangd.setup {
+  cmd = {
+    "clangd",
+    "--fallback-style=webkit"
+  }
+}
 
 vim.api.nvim_set_hl(0, "CmpItemKindClass", { fg = "#ffa14f" })
 vim.api.nvim_set_hl(0, "CmpItemKindValue", { fg = "#ff8170" })
@@ -83,4 +88,4 @@ vim.diagnostic.config({
   virtual_text = false
 })
 
---vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
