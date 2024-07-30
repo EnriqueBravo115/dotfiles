@@ -31,7 +31,7 @@ require("nvim-tree").setup({
   }
 })
 
-vim.cmd("highlight NvimTreeFolderIcon guifg=#ff7ab2")
+vim.cmd("highlight NvimTreeFolderIcon guifg=#C09553")
 vim.cmd("highlight NvimTreeIndentMarker guifg=#fd9353")
 
 vim.cmd("highlight NvimTreeNormal guibg=#282c34")
