@@ -21,18 +21,18 @@ require("nvim-tree").setup({
           empty = "",
           empty_open = ""
         },
-        git = {
-          staged = "⊙",
-          untracked = "⊙",
-          unstaged = "⊙"
-        }
+        --        git = {
+        --          staged = "⊙",
+        --          untracked = "⊙",
+        --          unstaged = "⊙"
+        --        }
       }
     }
   }
 })
 
-vim.cmd("highlight NvimTreeFolderIcon guifg=#C09553")
-vim.cmd("highlight NvimTreeIndentMarker guifg=#fd9353")
+--vim.cmd("highlight NvimTreeFolderIcon guifg=#C09553")
+--vim.cmd("highlight NvimTreeIndentMarker guifg=#fd9353")
 
 vim.cmd("highlight NvimTreeNormal guibg=#282c34")
 vim.cmd("highlight NvimTreeEndOfBuffer guifg=#282c34")

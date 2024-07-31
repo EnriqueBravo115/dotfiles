@@ -3,14 +3,15 @@ return require("packer").startup(function(use)
 
   -- GENERAL
   use "nvim-tree/nvim-tree.lua"
-  use "nvim-tree/nvim-web-devicons"
-  use "lewis6991/gitsigns.nvim"
-  use "norcalli/nvim-colorizer.lua"
-  use { "stevearc/dressing.nvim" }
   use "HiPhish/rainbow-delimiters.nvim"
   use "jiangmiao/auto-pairs"
-  use "lukas-reineke/indent-blankline.nvim"
-  use 'navarasu/onedark.nvim'
+  use "tpope/vim-fugitive"
+  use "vimwiki/vimwiki"
+  use "theprimeagen/harpoon"
+  use "mbbill/undotree"
+  use { "nvim-telescope/telescope.nvim", tag = "0.1.4", requires = { { "nvim-lua/plenary.nvim" } } }
+  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
@@ -21,40 +22,13 @@ return require("packer").startup(function(use)
     requires = { "nvim-tree/nvim-web-devicons", opt = true }
   }
 
-  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-
-  use({
-    "utilyre/barbecue.nvim",
-    tag = "*",
-    requires = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons",
-    },
-    after = "nvim-web-devicons",
-  })
-
-  -- TOOLS
-  use "tpope/vim-fugitive"
-  use "vimwiki/vimwiki"
-  use "theprimeagen/harpoon"
-  use "mbbill/undotree"
-  use "tpope/vim-surround"
-
-  use { "kristijanhusak/vim-dadbod-ui",
-    requires = { "tpope/vim-dadbod",
-      "tpope/vim-dotenv",
-      "kristijanhusak/vim-dadbod-completion" } }
-
-  use "nvim-lua/plenary.nvim"
-  use { "nvim-telescope/telescope.nvim", tag = "0.1.4", requires = { { "nvim-lua/plenary.nvim" } } }
-  use "nvim-telescope/telescope-dap.nvim"
-
+  -- DAP
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
   use "folke/neodev.nvim"
+  use "leoluz/nvim-dap-go"
 
   -- LANG
   use "mfussenegger/nvim-jdtls"
-  use "leoluz/nvim-dap-go"
   --use "clojure-vim/vim-jack-in"
   --use "tpope/vim-dispatch"
   --use "Olical/conjure"
@@ -74,7 +48,6 @@ return require("packer").startup(function(use)
       { "hrsh7th/nvim-cmp" },
       { "hrsh7th/cmp-nvim-lsp" },
       { "L3MON4D3/LuaSnip" },
-      { "onsails/lspkind.nvim" },
       { "hrsh7th/cmp-path" },
       { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-vsnip" },

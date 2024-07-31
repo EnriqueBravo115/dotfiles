@@ -18,7 +18,7 @@ vim.keymap.set("v", "<leader>y", '"+y<CR>')
 vim.keymap.set("n", "<C-p>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-q>", "<cmd>cprev<CR>zz")
 
-vim.keymap.set("n", "<leader>m", "<cmd>:MarkdownPreview<CR>")
+vim.keymap.set("n", "<leader>l", "<cmd>:MarkdownPreview<CR>")
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',

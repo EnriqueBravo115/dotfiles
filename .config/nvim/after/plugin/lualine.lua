@@ -40,17 +40,15 @@ require("lualine").setup {
     }
   },
   sections = {
-    lualine_a = { { "mode", icons_enabled = true, icon = "" } },
+    lualine_a = { { "mode" } },
     lualine_b = { { "branch", icon = "󰘬" },
 
     },
     lualine_c = { { "filename" }, { "diff", symbols = { added = "󰋠 ", modified = "󱗜 ", removed = "󰍵 " } } },
     lualine_x = {
       "diagnostics",
-      { "filetype", icon_only = true }
     },
     lualine_y = {
-      { "fileformat", symbols = { dos = " ", unix = " " } }
     },
     lualine_z = {
       { "location" }

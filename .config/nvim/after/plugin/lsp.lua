@@ -22,22 +22,7 @@ lsp.setup()
 
 cmp.setup({
   formatting = {
-    fields = { "abbr", "kind", "menu" },
-    format = require("lspkind").cmp_format({
-      mode = "symbol",
-      maxwidth = 40,
-      ellipsis_char = "...",
-      symbol_map = {
-        Value = "",
-        Interface = "",
-        Method = "󰊕",
-        Class = "",
-        Text = "",
-        Snippet = "󰕣"
-      }
-    })
-  },
-
+    fields = { "abbr", "kind" }, },
   mapping = cmp.mapping.preset.insert({
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
     ["<C-Space>"] = cmp.mapping.complete(),
@@ -79,8 +64,6 @@ require 'lspconfig'.clangd.setup {
   }
 }
 
-vim.api.nvim_set_hl(0, "CmpItemKindClass", { fg = "#ffa14f" })
-vim.api.nvim_set_hl(0, "CmpItemKindValue", { fg = "#ff8170" })
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
