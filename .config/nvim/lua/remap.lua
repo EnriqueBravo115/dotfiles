@@ -7,10 +7,6 @@ local set = vim.keymap.set
 -- TELESCOPE
 vim.keymap.set("n", "<leader>lc", "<cmd>:lua require'telescope'.extensions.dap.commands{}<CR>")
 
--- DADBOD UI
-vim.keymap.set("n", "<leader><leader>db", ":tab DBUI<cr>", {})
-vim.keymap.set("n", "<leader><leader>dq", ":tabclose<cr>", {})
-
 -- COMMANDS
 vim.keymap.set("n", "<leader>e", "<cmd>:NvimTreeToggle<CR>")
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>")
@@ -18,7 +14,7 @@ vim.keymap.set("v", "<leader>y", '"+y<CR>')
 vim.keymap.set("n", "<C-p>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-q>", "<cmd>cprev<CR>zz")
 
-vim.keymap.set("n", "<leader>l", "<cmd>:MarkdownPreview<CR>")
+vim.keymap.set("n", "<leader>ñ", "<cmd>:MarkdownPreview<CR>")
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',

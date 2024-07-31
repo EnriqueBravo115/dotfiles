@@ -5,10 +5,12 @@ return require("packer").startup(function(use)
   use "nvim-tree/nvim-tree.lua"
   use "HiPhish/rainbow-delimiters.nvim"
   use "jiangmiao/auto-pairs"
+  use "norcalli/nvim-colorizer.lua"
   use "tpope/vim-fugitive"
   use "vimwiki/vimwiki"
   use "theprimeagen/harpoon"
   use "mbbill/undotree"
+  use { "stevearc/dressing.nvim" }
   use { "nvim-telescope/telescope.nvim", tag = "0.1.4", requires = { { "nvim-lua/plenary.nvim" } } }
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
@@ -17,12 +19,10 @@ return require("packer").startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
 
-  use {
-    "nvim-lualine/lualine.nvim",
-    requires = { "nvim-tree/nvim-web-devicons", opt = true }
-  }
+  use { "nvim-lualine/lualine.nvim", }
 
   -- DAP
+  use "nvim-telescope/telescope-dap.nvim"
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
   use "folke/neodev.nvim"
   use "leoluz/nvim-dap-go"

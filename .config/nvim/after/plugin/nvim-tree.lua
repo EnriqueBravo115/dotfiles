@@ -13,28 +13,28 @@ require("nvim-tree").setup({
   renderer = {
     icons = {
       glyphs = {
-        folder = {
-          arrow_closed = "",
-          arrow_open = "",
-          default = "",
-          open = "",
-          empty = "",
-          empty_open = ""
-        },
-        --        git = {
-        --          staged = "⊙",
-        --          untracked = "⊙",
-        --          unstaged = "⊙"
-        --        }
+        --folder = {
+        --  arrow_closed = "",
+        --  arrow_open = "",
+        --  default = "",
+        --  open = "",
+        --  empty = "",
+        --  empty_open = ""
+        --},
+        git = {
+          staged = "+",
+          untracked = "?",
+          unstaged = "-"
+        }
       }
     }
   }
 })
 
---vim.cmd("highlight NvimTreeFolderIcon guifg=#C09553")
---vim.cmd("highlight NvimTreeIndentMarker guifg=#fd9353")
+vim.cmd("highlight NvimTreeFolderIcon guifg=#C09553")
+vim.cmd("highlight NvimTreeIndentMarker guifg=#fd9353")
 
-vim.cmd("highlight NvimTreeNormal guibg=#282c34")
-vim.cmd("highlight NvimTreeEndOfBuffer guifg=#282c34")
-vim.cmd("highlight NvimTreeCursorColumn guifg=#282c34")
-vim.cmd("highlight NvimTreeWinSeparator guifg=#282c34")
+--vim.cmd("highlight NvimTreeNormal guibg=#282c34")
+--vim.cmd("highlight NvimTreeEndOfBuffer guifg=#282c34")
+--vim.cmd("highlight NvimTreeCursorColumn guifg=#282c34")
+--vim.cmd("highlight NvimTreeWinSeparator guifg=#282c34")

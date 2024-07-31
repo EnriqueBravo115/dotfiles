@@ -1,14 +1,14 @@
 local Colors = {
-  violet = "#C69FF5",
+  violet = "#cf87e8",
   black  = "#000000",
-  green  = "#8BD5CA",
+  green  = "#36c692",
   gray1  = "#262626",
   gray5  = "#323437",
   gray7  = "#9e9e9e",
   gray10 = "#f0f0f0",
   t      = "#00FFFFFF",
   yellow = "#e85678",
-  orange = "#EE999F",
+  orange = "#80a0ff",
 }
 
 local powerline = {
@@ -44,9 +44,9 @@ require("lualine").setup {
     lualine_b = { { "branch", icon = "󰘬" },
 
     },
-    lualine_c = { { "filename" }, { "diff", symbols = { added = "󰋠 ", modified = "󱗜 ", removed = "󰍵 " } } },
+    lualine_c = { { "filename" }, { "diagnostics" } },
     lualine_x = {
-      "diagnostics",
+      "diff",
     },
     lualine_y = {
     },
