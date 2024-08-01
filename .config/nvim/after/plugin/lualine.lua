@@ -1,29 +1,33 @@
+vim.cmd("hi LuaLineDiffAdd guifg=#36c692 gui=bold")
+vim.cmd("hi LuaLineDiffChange guifg=#fd9353 gui=bold")
+vim.cmd("hi LuaLineDiffDelete guifg=#e85678 gui=bold")
+
 local Colors = {
-  violet = "#cf87e8",
-  black  = "#000000",
-  green  = "#36c692",
-  gray1  = "#262626",
-  gray5  = "#323437",
-  gray7  = "#9e9e9e",
-  gray10 = "#f0f0f0",
-  t      = "#00FFFFFF",
-  yellow = "#e85678",
-  orange = "#80a0ff",
+  violet      = "#cf87e8",
+  black       = "#000000",
+  green       = "#36c692",
+  gray1       = "#262626",
+  git         = "#323437",
+  filename    = "#9e9e9e",
+  yellow      = "#e3c78a",
+  transparent = "#00FFFFFF",
+  red         = "#e85678",
+  blue        = "#80a0ff",
 }
 
 local powerline = {
   normal = {
-    a = { fg = Colors.black, bg = Colors.orange, gui = "bold" },
-    b = { fg = Colors.gray10, bg = Colors.gray5 },
-    c = { fg = Colors.gray7, bg = Colors.t },
+    a = { fg = Colors.black, bg = Colors.blue, gui = "bold" },
+    b = { fg = Colors.yellow, bg = Colors.git },
+    c = { fg = Colors.filename, bg = Colors.transparent },
   },
   insert = { a = { fg = Colors.black, bg = Colors.green, gui = "bold" }, },
   visual = { a = { fg = Colors.black, bg = Colors.violet, gui = "bold" } },
-  command = { a = { fg = Colors.black, bg = Colors.yellow, gui = "bold" } },
+  command = { a = { fg = Colors.black, bg = Colors.red, gui = "bold" } },
   inactive = {
-    a = { fg = Colors.gray1, bg = Colors.t, gui = "bold" },
-    b = { fg = Colors.gray1, bg = Colors.t },
-    c = { bg = Colors.t, fg = Colors.gray5 },
+    a = { fg = Colors.gray1, bg = Colors.transparent, gui = "bold" },
+    b = { fg = Colors.gray1, bg = Colors.transparent },
+    c = { bg = Colors.transparent, fg = Colors.git },
   },
 }
 
@@ -44,12 +48,18 @@ require("lualine").setup {
     lualine_b = { { "branch", icon = "󰘬" },
 
     },
-    lualine_c = { { "filename" }, { "diagnostics" } },
-    lualine_x = {
-      "diff",
-    },
+    lualine_c = { { "filename" }, },
+    lualine_x = { "diagnostics" },
     lualine_y = {
-    },
+      {
+        'diff',
+        colored = true,
+        diff_color = {
+          added    = 'LuaLineDiffAdd',
+          modified = 'LuaLineDiffChange',
+          removed  = 'LuaLineDiffDelete',
+        },
+      } },
     lualine_z = {
       { "location" }
     }

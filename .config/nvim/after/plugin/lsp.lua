@@ -47,7 +47,7 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 vim.diagnostic.config({
-  virtual_text = true
+  virtual_text = false
 })
 
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+--vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]

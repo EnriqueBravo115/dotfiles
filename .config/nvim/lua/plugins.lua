@@ -3,6 +3,7 @@ return require("packer").startup(function(use)
 
   -- GENERAL
   use "nvim-tree/nvim-tree.lua"
+  use 'nvim-tree/nvim-web-devicons'
   use "HiPhish/rainbow-delimiters.nvim"
   use "jiangmiao/auto-pairs"
   use "norcalli/nvim-colorizer.lua"

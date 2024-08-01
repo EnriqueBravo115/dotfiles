@@ -31,7 +31,6 @@ vim.cmd("set concealcursor=nc")
 
 vim.opt.colorcolumn = "80"
 
-vim.cmd("highlight ColorColumn guibg=#3f444a")
-vim.cmd("highlight EndOfBuffer guifg=#282c34")
+vim.cmd("highlight ColorColumn guibg=#757575")
 
 vim.cmd("let g:powerline_loaded = 1")
