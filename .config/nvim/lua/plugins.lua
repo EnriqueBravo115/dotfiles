@@ -3,7 +3,6 @@ return require("packer").startup(function(use)
 
   -- GENERAL
   use "nvim-tree/nvim-tree.lua"
-  use 'nvim-tree/nvim-web-devicons'
   use "HiPhish/rainbow-delimiters.nvim"
   use "jiangmiao/auto-pairs"
   use "norcalli/nvim-colorizer.lua"
@@ -14,6 +13,7 @@ return require("packer").startup(function(use)
   use { "stevearc/dressing.nvim" }
   use { "nvim-telescope/telescope.nvim", tag = "0.1.4", requires = { { "nvim-lua/plenary.nvim" } } }
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+  use "craftzdog/solarized-osaka.nvim"
 
   use({
     "iamcco/markdown-preview.nvim",

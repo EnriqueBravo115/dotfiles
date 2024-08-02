@@ -48,9 +48,7 @@ require("lualine").setup {
     lualine_b = { { "branch", icon = "󰘬" },
 
     },
-    lualine_c = { { "filename" }, },
-    lualine_x = { "diagnostics" },
-    lualine_y = {
+    lualine_c = { { "filename" },
       {
         'diff',
         colored = true,
@@ -59,7 +57,11 @@ require("lualine").setup {
           modified = 'LuaLineDiffChange',
           removed  = 'LuaLineDiffDelete',
         },
-      } },
+      }
+    },
+    lualine_x = { "diagnostics" },
+    lualine_y = {
+    },
     lualine_z = {
       { "location" }
     }
