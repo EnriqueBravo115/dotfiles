@@ -8,6 +8,7 @@ return require("packer").startup(function(use)
   use "norcalli/nvim-colorizer.lua"
   use "tpope/vim-fugitive"
   use "vimwiki/vimwiki"
+  use "lewis6991/gitsigns.nvim"
   use "theprimeagen/harpoon"
   use "mbbill/undotree"
   use { "stevearc/dressing.nvim" }

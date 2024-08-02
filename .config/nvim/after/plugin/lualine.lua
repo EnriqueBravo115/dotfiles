@@ -1,7 +1,3 @@
-vim.cmd("hi LuaLineDiffAdd guifg=#36c692 gui=bold")
-vim.cmd("hi LuaLineDiffChange guifg=#fd9353 gui=bold")
-vim.cmd("hi LuaLineDiffDelete guifg=#e85678 gui=bold")
-
 local Colors = {
   violet      = "#cf87e8",
   black       = "#000000",
@@ -45,20 +41,8 @@ require("lualine").setup {
   },
   sections = {
     lualine_a = { { "mode" } },
-    lualine_b = { { "branch", icon = "󰘬" },
-
-    },
-    lualine_c = { { "filename" },
-      {
-        'diff',
-        colored = true,
-        diff_color = {
-          added    = 'LuaLineDiffAdd',
-          modified = 'LuaLineDiffChange',
-          removed  = 'LuaLineDiffDelete',
-        },
-      }
-    },
+    lualine_b = { { "branch", icon = "󰘬" }, },
+    lualine_c = { { "filename" }, { 'diff', } },
     lualine_x = { "diagnostics" },
     lualine_y = {
     },
