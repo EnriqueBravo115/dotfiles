@@ -1,4 +1,4 @@
 #! /bin/bash 
 
-dte="󰥔 $(date +"%l:%M%p   ")"
+dte="󰥔 $(date +"%l:%M%p ")"
 echo -e "^c#fd9353^$dte"
