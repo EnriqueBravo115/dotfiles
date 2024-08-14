@@ -194,7 +194,7 @@ static const Key keys[] = {
     { MODKEY,               XK_n,         spawn,         SHCMD("exec nitrogen") },
     { MODKEY,               XK_b,         spawn,         SHCMD("exec blueman-manager") },
     { MODKEY,               XK_m,         spawn,         SHCMD("exec amberol") },
-    { MODKEY,               XK_p,         spawn,         SHCMD("exec maim -s ~/docs/notes/img/$(date +%H:%M:%S).png") },
+    { MODKEY,               XK_p,         spawn,         SHCMD("exec maim -s ~/docus/notes/img/$(date +%H:%M:%S).png") },
     { MODKEY|ShiftMask,     XK_p,         spawn,         SHCMD("exec maim -s ~/$(date +%H:%M:%S).png") },
     { 0,                    XK_Print,     spawn,         SHCMD("exec maim ~/$(date +%H:%M:%S).png") },
 

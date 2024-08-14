@@ -17,6 +17,16 @@ return require("packer").startup(function(use)
   use "bluz71/vim-moonfly-colors"
 
   use({
+    "utilyre/barbecue.nvim",
+    tag = "*",
+    requires = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons",
+    },
+    after = "nvim-web-devicons",
+  })
+
+  use({
     "stevearc/oil.nvim",
     config = function()
       require("oil").setup()
