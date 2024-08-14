@@ -1,4 +1,4 @@
-vim.cmd("let g:mkdp_highlight_css='/home/nullboy/Documents/notes/my.css'")
+vim.cmd("let g:mkdp_highlight_css='/home/nullboy/docs/notes/my.css'")
 vim.cmd("let g:mkdp_theme='light'")
 vim.cmd("let g:mkdp_page_title = '${name}'")
 

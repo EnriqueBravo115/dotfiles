@@ -4,6 +4,7 @@ return require("packer").startup(function(use)
   -- GENERAL
   use "nvim-tree/nvim-tree.lua"
   use "HiPhish/rainbow-delimiters.nvim"
+  use "nvim-tree/nvim-web-devicons"
   use "jiangmiao/auto-pairs"
   use "norcalli/nvim-colorizer.lua"
   use "tpope/vim-fugitive"
@@ -11,17 +12,23 @@ return require("packer").startup(function(use)
   use "lewis6991/gitsigns.nvim"
   use "theprimeagen/harpoon"
   use "mbbill/undotree"
+  use "nvim-lualine/lualine.nvim"
   use { "stevearc/dressing.nvim" }
+  use "bluz71/vim-moonfly-colors"
+
+  use({
+    "stevearc/oil.nvim",
+    config = function()
+      require("oil").setup()
+    end,
+  })
+
   use { "nvim-telescope/telescope.nvim", tag = "0.1.4", requires = { { "nvim-lua/plenary.nvim" } } }
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-  use "craftzdog/solarized-osaka.nvim"
-
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
-
-  use { "nvim-lualine/lualine.nvim", }
 
   -- DAP
   use "nvim-telescope/telescope-dap.nvim"

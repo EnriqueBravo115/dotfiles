@@ -1,4 +1,4 @@
-#define TERMINAL "st"
+#define TERMINAL "kitty"
 #define TERMCLASS "St"
 #define BROWSER "brave"
 
@@ -13,12 +13,12 @@ static int smartgaps          = 0;        /* 1 means no outer gap when there is 
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]          = { "Iosevka Nerd Font:size=10", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"  };
-static char normbgcolor[]           = "#002b36";
+static char normbgcolor[]           = "#292a30";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#770000";
-static char selbgcolor[]            = "#2aa198";
+static char selbgcolor[]            = "#78c2b3";
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -38,7 +38,7 @@ static Sp scratchpads[] = {
 };
 
 /* tagging */
-static const char *tags[] = { "󰈹", "", "", "", "󰝚", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* class    instance      title       	 tags mask    isfloating   isterminal  noswallow  monitor */
@@ -152,9 +152,10 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_u,          setlayout,              {.v = &layouts[5]} }, /* monocle */
 	{ MODKEY,			    XK_i,          setlayout,              {.v = &layouts[6]} }, /* centeredmaster */
 	{ MODKEY|ShiftMask,		XK_i,          setlayout,              {.v = &layouts[7]} }, /* centeredfloatingmaster */
-	{ MODKEY,			    XK_o,          incnmaster,             {.i = +1 } },
-	{ MODKEY|ShiftMask,		XK_o,          incnmaster,             {.i = -1 } },
-	{ MODKEY,			    XK_backslash,  view,                   {0} },
+	//{ MODKEY,			    XK_o,          incnmaster,             {.i = +1 } },
+	//{ MODKEY|ShiftMask,		XK_o,          incnmaster,             {.i = -1 } },
+	//{ MODKEY,			    XK_r,          view,                   {0} },
+
 
 	{ MODKEY,			    XK_a,          togglegaps,             {0} },
 	{ MODKEY|ShiftMask,		XK_a,          defaultgaps,            {0} },
@@ -162,12 +163,11 @@ static const Key keys[] = {
 	{ MODKEY,			    XK_d,          spawn,                  {.v = (const char*[]){ "dmenu_run", NULL } } },
 	{ MODKEY,			    XK_f,          togglefullscr,          {0} },
 	{ MODKEY|ShiftMask,		XK_f,          setlayout,              {.v = &layouts[8]} },
+
 	{ MODKEY,			    XK_h,          setmfact,               {.f = -0.05} },
-	/* J and K are automatically bound above in STACKEYS */
 	{ MODKEY,			    XK_l,          setmfact,               {.f = +0.05} },
 	{ MODKEY|ShiftMask,		XK_semicolon,  shifttag,               { .i = 1 } },
-	{ MODKEY,			    XK_apostrophe, togglescratch,          {.ui = 1} },
-	{ MODKEY|ShiftMask,		XK_apostrophe, togglesmartgaps,        {0} },
+	{ MODKEY,		        XK_r,          togglesmartgaps,        {0} },
 	{ MODKEY,			    XK_Return,     spawn,                  {.v = termcmd } },
 	{ MODKEY|ShiftMask,		XK_Return,     togglescratch,          {.ui = 0} },
 
@@ -182,28 +182,27 @@ static const Key keys[] = {
 
 	{ MODKEY|ShiftMask,		XK_Page_Up,    shifttag,               { .i = -1 } },
 	{ MODKEY|ShiftMask,		XK_Page_Down,  shifttag,               { .i = +1 } },
-	{ MODKEY,			    XK_Insert,     spawn,                  SHCMD("xdotool type $(grep -v '^#' ~/links | dmenu -i -l 50 | cut -d' ' -f1)") },
 	{ MODKEY,			    XK_space,      zoom,                   {0} },
 	{ MODKEY|ShiftMask,		XK_space,      togglefloating,         {0} },
     { MODKEY|ShiftMask,     XK_q,          quit,                   { 0 } },
     { MODKEY,               XK_Tab,        shiftview,              { .i = +1 } },
     { MODKEY|ShiftMask,     XK_Tab,        shiftview,              { .i = -1 } },
+    { MODKEY,               XK_c,          shiftview,              { .i = 1 } },
 
-    { MODKEY,               XK_c,         spawn,         SHCMD("exec maim -s ~/Documents/notes/img/$(date +%H:%M:%S).png") },
+	{ MODKEY,			    XK_o,         spawn,         SHCMD("exec obsidian") },
     { MODKEY,               XK_e,         spawn,         SHCMD("exec emacs") },
-    { MODKEY,               XK_n,         spawn,         SHCMD("exec nemo") },
-    { MODKEY,               XK_p,         spawn,         SHCMD("exec slock") },
+    { MODKEY,               XK_n,         spawn,         SHCMD("exec nitrogen") },
     { MODKEY,               XK_b,         spawn,         SHCMD("exec blueman-manager") },
     { MODKEY,               XK_m,         spawn,         SHCMD("exec amberol") },
+    { MODKEY,               XK_p,         spawn,         SHCMD("exec maim -s ~/docs/notes/img/$(date +%H:%M:%S).png") },
+    { MODKEY|ShiftMask,     XK_p,         spawn,         SHCMD("exec maim -s ~/$(date +%H:%M:%S).png") },
+    { 0,                    XK_Print,     spawn,         SHCMD("exec maim ~/$(date +%H:%M:%S).png") },
 
 	{ 0,                    XF86XK_AudioMute,                         spawn,                  {.v = mutevol } },
 	{ 0,                    XF86XK_AudioRaiseVolume,                  spawn,                  {.v = upvol } },
 	{ 0,                    XF86XK_AudioLowerVolume,                  spawn,                  {.v = downvol } },
-	{ 0,                    XF86XK_MonBrightnessUp,                   spawn,                  {.v = (const char*[]){ "xbacklight", "-inc", "15", NULL } } },
-	{ 0,                    XF86XK_MonBrightnessDown,                 spawn,                  {.v = (const char*[]){ "xbacklight", "-dec", "15", NULL } } },
     { 0,                    XF86XK_MonBrightnessUp,                   spawn,                  { .v = (const char*[]) { "sudo", "xbacklight", "-inc", "10", NULL } } },
     { 0,                    XF86XK_MonBrightnessDown,                 spawn,                  { .v = (const char*[]) { "sudo", "xbacklight", "-dec", "10", NULL } } },
-    { 0,                    XK_Print,                                 spawn,                  SHCMD("exec maim ~/$(date +%H:%M:%S).png") },
 };
 
 /* button definitions */
@@ -223,13 +222,13 @@ static const Button buttons[] = {
 	{ ClkClientWin,         MODKEY,              Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,              Button2,        defaultgaps,    {0} },
 	{ ClkClientWin,         MODKEY,              Button3,        resizemouse,    {0} },
-	{ ClkClientWin,		MODKEY,		     Button4,	     incrgaps,       {.i = +1} },
-	{ ClkClientWin,		MODKEY,		     Button5,	     incrgaps,       {.i = -1} },
+	{ ClkClientWin,		    MODKEY,		         Button4,	     incrgaps,       {.i = +1} },
+	{ ClkClientWin,		    MODKEY,		         Button5,	     incrgaps,       {.i = -1} },
 	{ ClkTagBar,            0,                   Button1,        view,           {0} },
 	{ ClkTagBar,            0,                   Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,              Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,              Button3,        toggletag,      {0} },
-	{ ClkTagBar,		0,		     Button4,	     shiftview,      {.i = -1} },
-	{ ClkTagBar,		0,		     Button5,	     shiftview,      {.i = 1} },
-	{ ClkRootWin,		0,		     Button2,	     togglebar,      {0} },
+	{ ClkTagBar,		    0,		             Button4,	     shiftview,      {.i = -1} },
+	{ ClkTagBar,		    0,		             Button5,	     shiftview,      {.i = 1} },
+	{ ClkRootWin,		    0,		             Button2,	     togglebar,      {0} },
 };

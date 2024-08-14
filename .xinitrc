@@ -1,6 +1,6 @@
 #!/bin/bash
 
-feh --bg-fill /home/nullboy/Documents/org/wallpapers/yosemite.jpg &
+feh --bg-max /home/nullboy/docs/downloads/wallpapers/bioshock.jpg &
 
 picom &
 blueman-applet &

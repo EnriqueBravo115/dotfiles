@@ -1,14 +1,14 @@
 local Colors = {
-  violet      = "#cf87e8",
+  violet      = "#b281eb",
   black       = "#000000",
   green       = "#36c692",
   gray1       = "#262626",
-  git         = "#002731",
+  git         = "#393b44",
   filename    = "#9e9e9e",
   yellow      = "#e3c78a",
   transparent = "#00FFFFFF",
-  red         = "#e85678",
-  blue        = "#80a0ff",
+  red         = "#ff8170",
+  blue        = "#78c2b3",
 }
 
 local powerline = {
