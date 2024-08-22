@@ -77,6 +77,7 @@ local config = {
           "java.util.Objects.requireNonNullElse",
           "org.mockito.Mockito.*",
           "java.util.stream.Collectors.*",
+          "java.util.Comparator.*",
           "java.util.Map.entry",
           "org.assertj.core.api.Assertions.*"
         },

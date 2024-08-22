@@ -8,7 +8,7 @@ local set = vim.keymap.set
 vim.keymap.set("n", "<leader>lc", "<cmd>:lua require'telescope'.extensions.dap.commands{}<CR>")
 
 -- COMMANDS
-vim.keymap.set("n", "<leader>e", "<cmd>:Oil<CR>")
+vim.keymap.set("n", "<leader>e", "<cmd>:NvimTreeToggle<CR>")
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>")
 vim.keymap.set("v", "<leader>y", '"+y<CR>')
 vim.keymap.set("n", "<C-p>", "<cmd>cnext<CR>zz")

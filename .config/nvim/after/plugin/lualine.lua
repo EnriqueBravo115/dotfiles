@@ -1,7 +1,7 @@
 local Colors = {
-  violet      = "#b281eb",
+  violet      = "#ae81ff",
   black       = "#000000",
-  green       = "#36c692",
+  green       = "#d9b263",
   gray1       = "#262626",
   git         = "#393b44",
   filename    = "#9e9e9e",
@@ -17,9 +17,9 @@ local powerline = {
     b = { fg = Colors.yellow, bg = Colors.git },
     c = { fg = Colors.filename, bg = Colors.transparent },
   },
-  insert = { a = { fg = Colors.black, bg = Colors.green, gui = "bold" }, },
+  insert = { a = { fg = Colors.black, bg = Colors.red, gui = "bold" }, },
   visual = { a = { fg = Colors.black, bg = Colors.violet, gui = "bold" } },
-  command = { a = { fg = Colors.black, bg = Colors.red, gui = "bold" } },
+  command = { a = { fg = Colors.black, bg = Colors.green, gui = "bold" } },
   inactive = {
     a = { fg = Colors.gray1, bg = Colors.transparent, gui = "bold" },
     b = { fg = Colors.gray1, bg = Colors.transparent },

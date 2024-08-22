@@ -588,7 +588,7 @@
 (setq use-dialog-box nil)    ;; No dialog box
 (setq pop-up-windows nil)    ;; No popup windows
 (blink-cursor-mode 0)
-;;(add-to-list 'default-frame-alist '(alpha-background . 80)) ; For all new frames henceforth
+;;(add-to-list 'default-frame-alist '(alpha-background . 85)) ; For all new frames henceforth
 
 (tool-bar-mode -1)
 (setq frame-resize-pixelwise t)
@@ -626,7 +626,7 @@
   :config
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-xcode t)
+  (load-theme 'doom-nord-aurora t)
   (doom-themes-org-config))
 #+end_src
 

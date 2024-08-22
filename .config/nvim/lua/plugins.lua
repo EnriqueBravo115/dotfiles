@@ -15,6 +15,7 @@ return require("packer").startup(function(use)
   use "nvim-lualine/lualine.nvim"
   use { "stevearc/dressing.nvim" }
   use "bluz71/vim-moonfly-colors"
+  use "EdenEast/nightfox.nvim"
 
   use({
     "utilyre/barbecue.nvim",
@@ -24,13 +25,6 @@ return require("packer").startup(function(use)
       "nvim-tree/nvim-web-devicons",
     },
     after = "nvim-web-devicons",
-  })
-
-  use({
-    "stevearc/oil.nvim",
-    config = function()
-      require("oil").setup()
-    end,
   })
 
   use { "nvim-telescope/telescope.nvim", tag = "0.1.4", requires = { { "nvim-lua/plenary.nvim" } } }
@@ -48,9 +42,6 @@ return require("packer").startup(function(use)
 
   -- LANG
   use "mfussenegger/nvim-jdtls"
-  --use "clojure-vim/vim-jack-in"
-  --use "tpope/vim-dispatch"
-  --use "Olical/conjure"
 
   use {
     "VonHeikemen/lsp-zero.nvim",

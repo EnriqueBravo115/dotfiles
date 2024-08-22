@@ -13,10 +13,18 @@ require("nvim-tree").setup({
   renderer = {
     icons = {
       glyphs = {
+        folder = {
+          arrow_closed = "",
+          arrow_open = "",
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = ""
+        },
         git = {
-          staged = "+",
-          untracked = "?",
-          unstaged = "-"
+          staged = "",
+          untracked = "",
+          unstaged = ""
         }
       }
     }
