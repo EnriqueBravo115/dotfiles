@@ -14,8 +14,14 @@ return require("packer").startup(function(use)
   use "mbbill/undotree"
   use "nvim-lualine/lualine.nvim"
   use { "stevearc/dressing.nvim" }
-  use "bluz71/vim-moonfly-colors"
   use "EdenEast/nightfox.nvim"
+  use "lukas-reineke/indent-blankline.nvim"
+
+  use { "kristijanhusak/vim-dadbod-ui",
+    requires = { "tpope/vim-dadbod",
+      "tpope/vim-dotenv",
+      "kristijanhusak/vim-dadbod-completion" } }
+
 
   use({
     "utilyre/barbecue.nvim",

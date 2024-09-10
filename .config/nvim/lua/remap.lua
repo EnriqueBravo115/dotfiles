@@ -28,6 +28,9 @@ vim.api.nvim_exec([[
   tnoremap <esc><esc> <C-\><C-n>:wincmd w<CR>
 ]], false)
 
+vim.keymap.set("n", "<leader><leader>db", ":tab DBUI<cr>", {})
+vim.keymap.set("n", "<leader><leader>dq", ":tabclose<cr>", {})
+
 -- DAP
 map("n", "<leader>as", vim.diagnostic.setloclist)
 

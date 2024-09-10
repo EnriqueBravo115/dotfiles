@@ -2,7 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export MANPAGER="nvim +Man!"
 export PATH=$PATH:/usr/local/go/go/bin
 
-ZSH_THEME="crcandy"
+ZSH_THEME="robbyrussell"
 
 plugins=(
     zsh-autosuggestions
