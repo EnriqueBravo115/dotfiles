@@ -4,16 +4,12 @@ export PATH=$PATH:/usr/local/go/go/bin
 
 ZSH_THEME="robbyrussell"
 
-plugins=(
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    git)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
 alias v="nvim"
 alias c="clear"
-alias ls="gols"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

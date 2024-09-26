@@ -16,14 +16,10 @@ return require("packer").startup(function(use)
   use { "stevearc/dressing.nvim" }
   use "EdenEast/nightfox.nvim"
   use "lukas-reineke/indent-blankline.nvim"
+  use "akinsho/toggleterm.nvim"
+  use "jose-elias-alvarez/null-ls.nvim"
 
-  use { "kristijanhusak/vim-dadbod-ui",
-    requires = { "tpope/vim-dadbod",
-      "tpope/vim-dotenv",
-      "kristijanhusak/vim-dadbod-completion" } }
-
-
-  use({
+    use({
     "utilyre/barbecue.nvim",
     tag = "*",
     requires = {
@@ -48,7 +44,7 @@ return require("packer").startup(function(use)
 
   -- LANG
   use "mfussenegger/nvim-jdtls"
-
+  
   use {
     "VonHeikemen/lsp-zero.nvim",
     branch = "v2.x",

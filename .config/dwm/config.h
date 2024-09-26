@@ -2,23 +2,23 @@
 #define TERMCLASS "St"
 #define BROWSER "brave"
 
-static unsigned int borderpx  = 2;        /* border pixel of windows */
-static unsigned int snap      = 32;       /* snap pixel */
-static unsigned int gappih    = 7;       /* horiz inner gap between windows */
-static unsigned int gappiv    = 7;       /* vert inner gap between windows */
-static unsigned int gappoh    = 7;       /* horiz outer gap between windows and screen edge */
-static unsigned int gappov    = 7;       /* vert outer gap between windows and screen edge */
-static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
-static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
-static int showbar            = 1;        /* 0 means no bar */
-static int topbar             = 1;        /* 0 means bottom bar */
+static unsigned int borderpx  = 2;
+static unsigned int snap      = 32;
+static unsigned int gappih    = 7;
+static unsigned int gappiv    = 7;
+static unsigned int gappoh    = 7;
+static unsigned int gappov    = 7;
+static int swallowfloating    = 0;
+static int smartgaps          = 0;
+static int showbar            = 1;
+static int topbar             = 1;
 static char *fonts[]          = { "Iosevka Nerd Font:size=10", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"  };
-static char normbgcolor[]           = "#2e3440";
-static char normbordercolor[]       = "#444444";
-static char normfgcolor[]           = "#bbbbbb";
-static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#770000";
-static char selbgcolor[]            = "#78c2b3";
+static char normbgcolor[]      = "#2e3440";
+static char normbordercolor[]  = "#444444";
+static char normfgcolor[]      = "#bbbbbb";
+static char selfgcolor[]       = "#eeeeee";
+static char selbordercolor[]   = "#770000";
+static char selbgcolor[]       = "#78c2b3";
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -37,7 +37,6 @@ static Sp scratchpads[] = {
 	{"spcalc",      spcmd2},
 };
 
-/* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
@@ -60,23 +59,18 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 #include "vanitygaps.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",	tile },	                /* Default: Master on left, slaves on right */
-	{ "TTT",	bstack },               /* Master on top, slaves on bottom */
-
-	{ "[@]",	spiral },               /* Fibonacci spiral */
-	{ "[\\]",	dwindle },              /* Decreasing in size right and leftward */
-
-	{ "[D]",	deck },	                /* Master on left, slaves in monocle-like mode on right */
-	{ "[M]",	monocle },              /* All windows on top of eachother */
-
-	{ "|M|",	centeredmaster },               /* Master in middle, slaves on sides */
-	{ ">M>",	centeredfloatingmaster },       /* Same but master floats */
-
-	{ "><>",	NULL },	                /* no layout function means floating behavior */
+	{ "[]=",	tile },
+	{ "TTT",	bstack },
+	{ "[@]",	spiral },
+	{ "[\\]",	dwindle },
+	{ "[D]",	deck },
+	{ "[M]",	monocle },
+	{ "|M|",	centeredmaster },
+	{ ">M>",	centeredfloatingmaster },
+	{ "><>",	NULL },
 	{ NULL,		NULL },
 };
 
-/* key definitions */
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
@@ -88,15 +82,10 @@ static const Layout layouts[] = {
 	{ MOD,	XK_k,	ACTION##stack,	{.i = INC(-1) } }, \
 	{ MOD,  XK_v,   ACTION##stack,  {.i = 0 } }, \
 
-/* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-/* commands */
 static const char *termcmd[]  = { TERMINAL, NULL };
 
-/*
- * Xresources preferences to load at startup
- */
 ResourcePref resources[] = {
 		{ "color0",		STRING,	&normbordercolor },
 		{ "color8",		STRING,	&selbordercolor },
@@ -152,10 +141,6 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_u,          setlayout,              {.v = &layouts[5]} }, /* monocle */
 	{ MODKEY,			    XK_i,          setlayout,              {.v = &layouts[6]} }, /* centeredmaster */
 	{ MODKEY|ShiftMask,		XK_i,          setlayout,              {.v = &layouts[7]} }, /* centeredfloatingmaster */
-	//{ MODKEY,			    XK_o,          incnmaster,             {.i = +1 } },
-	//{ MODKEY|ShiftMask,		XK_o,          incnmaster,             {.i = -1 } },
-	//{ MODKEY,			    XK_r,          view,                   {0} },
-
 
 	{ MODKEY,			    XK_a,          togglegaps,             {0} },
 	{ MODKEY|ShiftMask,		XK_a,          defaultgaps,            {0} },
@@ -189,11 +174,11 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,     XK_Tab,        shiftview,              { .i = -1 } },
     { MODKEY,               XK_c,          shiftview,              { .i = 1 } },
 
-	{ MODKEY,			    XK_o,         spawn,         SHCMD("exec pcmanfm") },
+    { MODKEY|ShiftMask,     XK_s,         spawn,         SHCMD("exec slock") },
+	{ MODKEY,			    XK_n,         spawn,         SHCMD("exec nemo") },
     { MODKEY,               XK_e,         spawn,         SHCMD("exec emacs") },
-    { MODKEY,               XK_n,         spawn,         SHCMD("exec nitrogen") },
+    { MODKEY,               XK_o,         spawn,         SHCMD("exec feh --bg-fill --randomize ~/downloads/wallpapers/*") },
     { MODKEY,               XK_b,         spawn,         SHCMD("exec blueman-manager") },
-    { MODKEY,               XK_m,         spawn,         SHCMD("exec amberol") },
     { MODKEY,               XK_p,         spawn,         SHCMD("exec maim -s ~/docus/org/img/$(date +%H:%M:%S).png") },
     { MODKEY|ShiftMask,     XK_p,         spawn,         SHCMD("exec maim -s ~/$(date +%H:%M:%S).png") },
     { 0,                    XK_Print,     spawn,         SHCMD("exec maim ~/$(date +%H:%M:%S).png") },
@@ -205,8 +190,6 @@ static const Key keys[] = {
     { 0,                    XF86XK_MonBrightnessDown,                 spawn,                  { .v = (const char*[]) { "sudo", "xbacklight", "-dec", "10", NULL } } },
 };
 
-/* button definitions */
-/* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
 	/* click                event mask           button          function        argument */
 #ifndef __OpenBSD__
