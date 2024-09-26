@@ -1,1 +1,0 @@
-.config/doom/init.el
