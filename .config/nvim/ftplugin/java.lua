@@ -9,16 +9,6 @@ local root_dir = require("jdtls.setup").find_root(root_markers)
 
 local workspace_folder = home .. "/.cache/jdtls/workspace" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
-local bundles = {
-  vim.fn.glob(
-    home ..
-    "/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-0.53.0.jar",
-    "\n")
-}
-
-vim.list_extend(bundles,
-  vim.split(vim.fn.glob(home .. "/.local/share/nvim/mason/packages/java-test/extension/server/*.jar", 1), "\n"))
-
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
@@ -125,15 +115,10 @@ local config = {
     "-configuration", "/home/nullboy/.config/jdtls1.37.0/config_linux/",
     "-data", workspace_folder,
   },
-  init_options = {
-    bundles = bundles,
-  },
 }
 
 config["on_attach"] = function(client, bufnr)
-  require("jdtls").setup_dap({ hotcodereplace = "auto" })
+  require("jdtls")
 end
-
-require("dap.ext.vscode").load_launchjs()
 
 jdtls.start_or_attach(config)

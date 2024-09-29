@@ -1,7 +1,3 @@
-require("neodev").setup({
-  library = { plugins = { "nvim-dap-ui" }, types = true },
-})
-
 local lsp = require("lsp-zero")
 local cmp = require("cmp")
 
@@ -49,8 +45,6 @@ cmp.setup({
 --    "--fallback-style=webkit"
 --  }
 --}
-
-require'lspconfig'.asm_lsp.setup{}
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
