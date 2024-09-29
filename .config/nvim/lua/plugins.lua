@@ -19,7 +19,7 @@ return require("packer").startup(function(use)
   use "akinsho/toggleterm.nvim"
   use "jose-elias-alvarez/null-ls.nvim"
 
-    use({
+  use({
     "utilyre/barbecue.nvim",
     tag = "*",
     requires = {
@@ -44,7 +44,7 @@ return require("packer").startup(function(use)
 
   -- LANG
   use "mfussenegger/nvim-jdtls"
-  
+
   use {
     "VonHeikemen/lsp-zero.nvim",
     branch = "v2.x",

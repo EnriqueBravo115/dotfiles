@@ -111,8 +111,8 @@ ResourcePref resources[] = {
 #include <X11/XF86keysym.h>
 #include "shiftview.c"
 
-static const char* upvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
-static const char* downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL };
+static const char* upvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+1%", NULL };
+static const char* downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-1%", NULL };
 static const char* mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL };
 
 static const Key keys[] = {
@@ -165,17 +165,17 @@ static const Key keys[] = {
 	{ MODKEY,			    XK_Right,      focusmon,               {.i = +1 } },
 	{ MODKEY|ShiftMask,		XK_Right,      tagmon,                 {.i = +1 } },
 
-	{ MODKEY|ShiftMask,		XK_Page_Up,    shifttag,               { .i = -1 } },
-	{ MODKEY|ShiftMask,		XK_Page_Down,  shifttag,               { .i = +1 } },
-	{ MODKEY,			    XK_space,      zoom,                   {0} },
-	{ MODKEY|ShiftMask,		XK_space,      togglefloating,         {0} },
+    { MODKEY|ShiftMask,		XK_Page_Up,    shifttag,               { .i = -1 } },
+    { MODKEY|ShiftMask,		XK_Page_Down,  shifttag,               { .i = +1 } },
+    { MODKEY,			    XK_space,      zoom,                   {0} },
+    { MODKEY|ShiftMask,		XK_space,      togglefloating,         {0} },
     { MODKEY|ShiftMask,     XK_q,          quit,                   { 0 } },
     { MODKEY,               XK_Tab,        shiftview,              { .i = +1 } },
     { MODKEY|ShiftMask,     XK_Tab,        shiftview,              { .i = -1 } },
     { MODKEY,               XK_c,          shiftview,              { .i = 1 } },
 
     { MODKEY|ShiftMask,     XK_s,         spawn,         SHCMD("exec slock") },
-	{ MODKEY,			    XK_n,         spawn,         SHCMD("exec nemo") },
+    { MODKEY,			    XK_n,         spawn,         SHCMD("exec nemo") },
     { MODKEY,               XK_e,         spawn,         SHCMD("exec emacs") },
     { MODKEY,               XK_o,         spawn,         SHCMD("exec feh --bg-fill --randomize ~/downloads/wallpapers/*") },
     { MODKEY,               XK_b,         spawn,         SHCMD("exec blueman-manager") },
