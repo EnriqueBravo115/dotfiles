@@ -108,7 +108,7 @@ local config = {
     "--add-modules=ALL-SYSTEM",
     "--add-opens", "java.base/java.util=ALL-UNNAMED",
     "--add-opens", "java.base/java.lang=ALL-UNNAMED",
-    "-javaagent:" .. home .. "/.config/nvim/jdtls/lombok.jar",
+    "-javaagent:" .. home .. "/.config/lombok.jar",
     "-jar",
     vim.fn.glob(
       "/home/nullboy/.config/jdtls1.37.0/plugins/org.eclipse.equinox.launcher_*.jar"),

@@ -1,4 +1,4 @@
-#define TERMINAL "kitty"
+#define TERMINAL "alacritty"
 #define TERMCLASS "St"
 #define BROWSER "brave"
 

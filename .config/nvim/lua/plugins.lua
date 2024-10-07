@@ -12,9 +12,11 @@ return require("packer").startup(function(use)
   use "theprimeagen/harpoon"
   use "mbbill/undotree"
   use "nvim-lualine/lualine.nvim"
-  use { "stevearc/dressing.nvim" }
+  use "stevearc/dressing.nvim"
   use "akinsho/toggleterm.nvim"
   use "jose-elias-alvarez/null-ls.nvim"
+  use "lukas-reineke/indent-blankline.nvim"
+  use "rose-pine/neovim"
 
   use { "nvim-telescope/telescope.nvim", tag = "0.1.4", requires = { { "nvim-lua/plenary.nvim" } } }
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })

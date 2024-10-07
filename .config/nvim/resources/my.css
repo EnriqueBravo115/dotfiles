@@ -1,0 +1,44 @@
+* {
+    font-family: 'Iosevka Nerd Font';
+}
+
+li::marker {
+    color: #fd9353;
+    font-weight: bold;
+}
+
+em {
+    color: #ae81ff;
+}
+
+strong {
+    color: #ff335c;
+}
+
+.katex {
+    margin: 0 2px;
+    padding: 0 5px;
+    white-space: nowrap;
+    border: 1px solid #eaeaea;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+}
+
+code {
+    margin: 0 2px;
+    padding: 0 5px;
+    white-space: nowrap;
+    border: 1px solid #eaeaea;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    font-family: 'Iosevka Nerd Font';
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}

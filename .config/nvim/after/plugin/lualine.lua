@@ -42,7 +42,7 @@ require("lualine").setup {
   sections = {
     lualine_a = { { "mode" } },
     lualine_b = { { "branch", icon = "󰘬" }, },
-    lualine_c = { { "filename" }, { 'diff', } },
+    lualine_c = { { "filename" }, { "diff", symbols = { added = "󰋠 ", modified = "󱗜 ", removed = "󰍵 " } } },
     lualine_x = { "diagnostics" },
     lualine_y = {
     },

@@ -3,11 +3,7 @@ export MANPAGER="nvim +Man!"
 export PATH=$PATH:/usr/local/go/go/bin
 
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-
-plugins=(git
-zsh-syntax-highlighting
-    )
+ZSH_THEME=robbyrussell
 
 source $ZSH/oh-my-zsh.sh
 
@@ -16,7 +12,6 @@ alias c="clear"
 
 bindkey -v
 export KEYTIMEOUT=1
-_comp_options+=(globdots)
 
 # bun completions
 [ -s "/home/nullboy/.bun/_bun" ] && source "/home/nullboy/.bun/_bun"
