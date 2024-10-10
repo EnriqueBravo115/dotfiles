@@ -1,17 +1,17 @@
 local Colors = {
-  violet      = "#ae81ff",
   black1      = "#000000",
   black2      = "#262626",
   yellow1     = "#d9b263",
   yellow2     = "#e3c78a",
+  violet      = "#ae81ff",
   git         = "#393b44",
   filename    = "#9e9e9e",
-  transparent = "#00FFFFFF",
   red         = "#ff8170",
   blue        = "#78c2b3",
+  transparent = "#00FFFFFF"
 }
 
-local powerline = {
+local custom = {
   normal = {
     a = { fg = Colors.black1, bg = Colors.blue, gui = "bold" },
     b = { fg = Colors.yellow2, bg = Colors.git },
@@ -29,7 +29,7 @@ local powerline = {
 
 require("lualine").setup {
   options = {
-    theme = powerline,
+    theme = custom,
     component_separators = "",
     section_separators = { left = "", right = "" },
     always_divide_middle = false,

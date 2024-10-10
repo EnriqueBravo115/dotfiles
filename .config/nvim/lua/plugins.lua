@@ -5,7 +5,6 @@ return require("packer").startup(function(use)
   use "nvim-tree/nvim-tree.lua"
   use "nvim-tree/nvim-web-devicons"
   use "jiangmiao/auto-pairs"
-  use "norcalli/nvim-colorizer.lua"
   use "tpope/vim-fugitive"
   use "vimwiki/vimwiki"
   use "lewis6991/gitsigns.nvim"
@@ -13,31 +12,22 @@ return require("packer").startup(function(use)
   use "mbbill/undotree"
   use "nvim-lualine/lualine.nvim"
   use "stevearc/dressing.nvim"
-  use "akinsho/toggleterm.nvim"
   use "jose-elias-alvarez/null-ls.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
   use "rose-pine/neovim"
-
-  use { "nvim-telescope/telescope.nvim", tag = "0.1.8", requires = { { "nvim-lua/plenary.nvim" } } }
+  use "mfussenegger/nvim-jdtls"
+  use({ "nvim-telescope/telescope.nvim", tag = "0.1.8", requires = { { "nvim-lua/plenary.nvim" } } })
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+
+  use { "norcalli/nvim-colorizer.lua",
+    config = function()
+      require "colorizer".setup()
+    end
+  }
 
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
-
-  use({
-    "utilyre/barbecue.nvim",
-    tag = "*",
-    requires = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons",
-    },
-    after = "nvim-web-devicons",
-  })
-
-  -- LANG
-  use "mfussenegger/nvim-jdtls"
 
   -- DAP
   use "nvim-telescope/telescope-dap.nvim"
@@ -62,10 +52,7 @@ return require("packer").startup(function(use)
       { "hrsh7th/cmp-path" },
       { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-vsnip" },
-      { "hrsh7th/vim-vsnip" },
-      { "saadparwaiz1/cmp_luasnip" },
       { "hrsh7th/cmp-nvim-lua" },
-      { "rafamadriz/friendly-snippets" },
     }
   }
 end)
