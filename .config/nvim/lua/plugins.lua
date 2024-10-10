@@ -18,7 +18,7 @@ return require("packer").startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   use "rose-pine/neovim"
 
-  use { "nvim-telescope/telescope.nvim", tag = "0.1.4", requires = { { "nvim-lua/plenary.nvim" } } }
+  use { "nvim-telescope/telescope.nvim", tag = "0.1.8", requires = { { "nvim-lua/plenary.nvim" } } }
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
   use({
@@ -26,8 +26,24 @@ return require("packer").startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
 
+  use({
+    "utilyre/barbecue.nvim",
+    tag = "*",
+    requires = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons",
+    },
+    after = "nvim-web-devicons",
+  })
+
   -- LANG
   use "mfussenegger/nvim-jdtls"
+
+  -- DAP
+  use "nvim-telescope/telescope-dap.nvim"
+  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
+  use "folke/neodev.nvim"
+  use "leoluz/nvim-dap-go"
 
   use {
     "VonHeikemen/lsp-zero.nvim",

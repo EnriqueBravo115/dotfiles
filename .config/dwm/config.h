@@ -177,7 +177,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,     XK_s,         spawn,         SHCMD("exec slock") },
     { MODKEY,			    XK_n,         spawn,         SHCMD("exec nemo") },
     { MODKEY,               XK_e,         spawn,         SHCMD("exec emacs") },
-    { MODKEY,               XK_o,         spawn,         SHCMD("exec feh --bg-fill --randomize ~/downloads/wallpapers/*") },
+    { MODKEY,               XK_o,         spawn,         SHCMD("exec feh --bg-fill --randomize ~/dw/wallpapers/*") },
     { MODKEY,               XK_b,         spawn,         SHCMD("exec blueman-manager") },
     { MODKEY,               XK_p,         spawn,         SHCMD("exec maim -s ~/docus/org/img/$(date +%H:%M:%S).png") },
     { MODKEY|ShiftMask,     XK_p,         spawn,         SHCMD("exec maim -s ~/$(date +%H:%M:%S).png") },
