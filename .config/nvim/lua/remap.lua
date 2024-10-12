@@ -23,22 +23,10 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- TELESCOPE
 vim.keymap.set("n", "<leader>lc", "<cmd>:lua require'telescope'.extensions.dap.commands{}<CR>")
-
-vim.keymap.set("n", "<leader>ff",
-  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({previewer=false}))<cr>",
-  opts)
-
-vim.keymap.set("n", "<leader>bf",
-  "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_ivy({previewer=false}))<cr>", opts)
-
-vim.keymap.set('n', '<leader>fo',
-  "<cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_ivy({previewer=false}))<cr>",
-  opts
-)
-
-vim.keymap.set("n", "<leader>ww", function()
-  builtin.grep_string({ search = vim.fn.input("Grep > ") })
-end)
+vim.keymap.set("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({previewer=false}))<cr>", opts)
+vim.keymap.set("n", "<leader>bf", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_ivy({previewer=false}))<cr>", opts)
+vim.keymap.set('n', '<leader>fo', "<cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_ivy({previewer=false}))<cr>", opts)
+vim.keymap.set("n", "<leader>ww", function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end)
 
 -- Harpoon
 vim.keymap.set("n", "<C-s>", mark.add_file)
@@ -61,28 +49,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Exit from window
-vim.api.nvim_exec([[
-  tnoremap <esc><esc> <C-\><C-n>:wincmd w<CR>
-]], false)
+vim.api.nvim_exec([[tnoremap <esc><esc> <C-\><C-n>:wincmd w<CR> ]], false)
 
 -- DAP
 set("n", "<leader>as", vim.diagnostic.setloclist)
-
-set("n", "<leader>dc", function()
-  require("dap").continue()
-end)
-set("n", "<leader>dt", function()
-  require("dap").toggle_breakpoint()
-end)
-set("n", "<leader>dso", function()
-  require("dap").step_over()
-end)
-set("n", "<leader>dsi", function()
-  require("dap").step_into()
-end)
-set("n", "<leader>dr", function()
-  require("dap").repl.toggle()
-end)
+set("n", "<leader>dc", function() require("dap").continue() end)
+set("n", "<leader>dt", function() require("dap").toggle_breakpoint() end)
+set("n", "<leader>dso", function() require("dap").step_over() end)
+set("n", "<leader>dsi", function() require("dap").step_into() end)
+set("n", "<leader>dr", function() require("dap").repl.toggle() end)
 
 -- DAP java test
 set("n", "<leader>df", function()
